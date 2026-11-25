@@ -185,23 +185,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1a
 .fiber .btn{margin-top:26px}
 
 /* ---------- wi-fi 6 ---------- */
-.wifi{display:grid;gap:28px;align-items:center}
-.wifi .pic{position:relative;border-radius:24px;background:radial-gradient(60% 60% at 50% 55%,#fff 0%,#EEF0F3 70%);padding:28px 24px 34px}
-.wifi .pic img{position:relative;margin:0 auto;width:88%;animation:float 5s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-10px)}}
-.wifi .pic .shadow{position:absolute;left:50%;bottom:26px;width:56%;height:18px;margin-left:-28%;border-radius:50%;background:rgba(0,0,0,.12);filter:blur(8px);animation:sh 5s ease-in-out infinite}
-@keyframes sh{50%{transform:scale(.85);opacity:.6}}
-.sig{position:absolute;top:18px;right:20px;width:64px;height:48px}
-.sig path{fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;opacity:.15;animation:sig 1.8s ease-in-out infinite}
+.wifi{display:grid;gap:20px;grid-template-areas:"head" "pic" "ben"}
+.w-head{grid-area:head;margin-bottom:0}
+.wifi .pic{grid-area:pic;position:relative;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border-radius:24px;background:radial-gradient(60% 60% at 50% 52%,#fff 0%,#EEF0F3 72%);overflow:hidden}
+.wifi .pic img{position:relative;z-index:1;width:68%;margin-top:6%;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.wifi .pic .shadow{position:absolute;left:50%;bottom:13%;width:46%;height:16px;margin-left:-23%;border-radius:50%;background:rgba(0,0,0,.13);filter:blur(8px);animation:sh 5s ease-in-out infinite}
+@keyframes sh{50%{transform:scale(.88);opacity:.65}}
+.wifi .pic .lbl{position:absolute;z-index:2;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:14px;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.sig{width:20px;height:20px}
+.sig path{fill:none;stroke:#FF3A40;stroke-width:2.4;stroke-linecap:round;opacity:.25;animation:sig 1.8s ease-in-out infinite}
 .sig path:nth-child(2){animation-delay:.25s}.sig path:nth-child(3){animation-delay:.5s}
-@keyframes sig{30%{opacity:1}70%{opacity:.15}}
-.wifi .pic .lbl{position:absolute;top:16px;left:16px;padding:6px 12px;border-radius:999px;background:var(--ink);color:#fff;font-size:13px;font-weight:800;letter-spacing:.02em}
-.ben{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
-.ben li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
-.ben i{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#FDECEC;color:var(--red)}
+@keyframes sig{30%{opacity:1}70%{opacity:.25}}
+.ben{grid-area:ben;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ben li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:14px 8px;border-radius:16px;background:var(--soft)}
+.ben i{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#fff;color:var(--red);box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .ben i svg{width:22px;height:22px}
-.ben b{display:block;font-size:16px}
-.ben span{color:var(--mut);font-size:15px}
+.ben b{display:block;font-size:14px;line-height:1.25}
+.ben span{display:none;color:var(--mut);font-size:15px}
+.ben li:nth-child(2){transition-delay:.08s}.ben li:nth-child(3){transition-delay:.16s}
 
 /* ---------- como contratar ---------- */
 .how{display:grid;gap:10px;align-items:end}
@@ -289,7 +291,12 @@ footer a:hover{text-decoration:underline}
   .utrack{gap:18px}
   .use{flex-basis:calc((100% - 36px)/3);max-width:none}
   .use:hover .cap{transform:none;opacity:1}
-  .wifi{grid-template-columns:1fr 1fr;gap:64px}
+  .wifi{grid-template-columns:1fr 1fr;grid-template-areas:"pic head" "pic ben";column-gap:64px;row-gap:24px;align-items:center}
+  .w-head{align-self:end}
+  .ben{align-self:start;grid-template-columns:1fr;gap:12px}
+  .ben li{flex-direction:row;text-align:left;gap:14px;padding:14px 16px}
+  .ben b{font-size:16px}
+  .ben span{display:block}
   .how{grid-template-columns:320px 1fr;gap:56px}
   .how .tech{display:block;align-self:end;margin-bottom:-96px}
   .how .tech img{height:600px;width:auto;margin:0 auto}
@@ -330,7 +337,7 @@ footer a:hover{text-decoration:underline}
     <a class="logo" href="#" aria-label="JSM Net, início"><img src="img/logo-cor.webp" width="640" height="210" alt="JSM Net Provedor de Internet"></a>
     <nav aria-label="Seções">
       <a href="#planos">Planos</a>
-      <a href="#wifi">Wi-Fi 6</a>
+      <a href="#wifi6">Wi-Fi 6</a>
       <a href="#cidades">Cidades</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
@@ -450,20 +457,23 @@ footer a:hover{text-decoration:underline}
 </section>
 
 <!-- ===================== WI-FI 6 ===================== -->
-<section class="sec" id="wifi" aria-labelledby="h-wifi">
+<section class="sec" id="wifi6" aria-labelledby="h-wifi">
   <div class="wrap wifi">
-    <div class="pic rv"><span class="lbl">Wi-Fi 6</span><svg class="sig" viewBox="0 0 64 48" aria-hidden="true"><path d="M26 40a8 8 0 0 1 12 0"/><path d="M17 31a21 21 0 0 1 30 0"/><path d="M8 22a34 34 0 0 1 48 0"/></svg><span class="shadow"></span><img src="img/roteador.webp" width="760" height="601" loading="lazy" alt="Roteador Wi-Fi 6 branco com quatro antenas"></div>
-    <div>
-      <div class="sec-h rv" style="margin-bottom:0">
-        <span class="eyebrow">Equipamento</span>
-        <h2 id="h-wifi">Roteador Wi-Fi 6 pra internet chegar forte na casa toda</h2>
-      </div>
-      <ul class="ben">
-        <li class="rv"><i><svg aria-hidden="true"><use href="#home"/></svg></i><div><b>Mais alcance</b><span>Sinal mais forte nos cômodos da casa.</span></div></li>
-        <li class="rv"><i><svg aria-hidden="true"><use href="#dev"/></svg></i><div><b>Vários aparelhos ao mesmo tempo</b><span>Celulares, TV e computador sem disputar a conexão.</span></div></li>
-        <li class="rv"><i><svg aria-hidden="true"><use href="#shield"/></svg></i><div><b>Mais estabilidade</b><span>Menos travadas em chamadas de vídeo e jogos.</span></div></li>
-      </ul>
+    <div class="sec-h w-head rv">
+      <span class="eyebrow">Equipamento</span>
+      <h2 id="h-wifi">Roteador Wi-Fi 6: internet forte na casa toda</h2>
+      <p>A instalação é feita com roteador Wi-Fi 6, a geração mais nova do Wi-Fi.</p>
     </div>
+    <div class="pic rv">
+      <span class="shadow"></span>
+      <img src="img/roteador.webp" width="760" height="601" loading="lazy" alt="Roteador Wi-Fi 6 branco com quatro antenas">
+      <span class="lbl"><svg class="sig" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 16a5 5 0 0 1 7 0"/><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M1.5 9a15 15 0 0 1 21 0"/></svg>Wi-Fi 6</span>
+    </div>
+    <ul class="ben">
+      <li class="rv"><i><svg aria-hidden="true"><use href="#home"/></svg></i><div><b>Mais alcance</b><span>Sinal forte em todos os cômodos.</span></div></li>
+      <li class="rv"><i><svg aria-hidden="true"><use href="#dev"/></svg></i><div><b>Vários aparelhos</b><span>Celular, TV e PC ao mesmo tempo.</span></div></li>
+      <li class="rv"><i><svg aria-hidden="true"><use href="#shield"/></svg></i><div><b>Mais estável</b><span>Menos travadas em chamadas e jogos.</span></div></li>
+    </ul>
   </div>
 </section>
 
