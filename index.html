@@ -114,12 +114,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1a
 .pips button.on{width:24px;background:#fff}
 
 /* ---------- planos ---------- */
-.plans{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:16px 20px 18px;scrollbar-width:none}
+.plans{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:24px 24px 22px;scroll-padding:0 24px;scrollbar-width:none}
 .plans::-webkit-scrollbar{display:none}
 .plan{position:relative;flex:0 0 82%;max-width:360px;scroll-snap-align:center;display:flex;flex-direction:column;padding:26px 22px 22px;border-radius:var(--r);background:#fff;border:1px solid var(--line);box-shadow:var(--sh);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .plans{position:relative}
-.ring{position:absolute;z-index:3;left:0;top:0;width:0;height:0;pointer-events:none;border-radius:24px;border:3px solid var(--red);box-shadow:0 0 0 6px rgba(227,18,27,.12),0 18px 40px rgba(227,18,27,.2);opacity:0;transition:transform .6s cubic-bezier(.34,1.56,.64,1),width .4s ease,height .4s ease,opacity .3s ease}
+.ring{position:absolute;z-index:3;left:0;top:0;width:0;height:0;pointer-events:none;border-radius:24px;border:3px solid var(--red);box-shadow:0 0 0 6px rgba(227,18,27,.12),0 18px 40px rgba(227,18,27,.2);opacity:0;transition:transform .38s cubic-bezier(.34,1.35,.64,1),width .3s ease,height .3s ease,opacity .2s ease}
 .ring.ready{opacity:1}
+/* celular: a borda faz parte do próprio card e acompanha o dedo */
+.plan::before{content:"";position:absolute;inset:-7px;border-radius:24px;border:3px solid var(--red);box-shadow:0 0 0 6px rgba(227,18,27,.12),0 18px 40px rgba(227,18,27,.2);opacity:0;transform:scale(.97);transition:opacity .2s ease,transform .25s cubic-bezier(.34,1.5,.64,1);pointer-events:none;z-index:3}
+.plan::after{content:"";position:absolute;right:-20px;top:-20px;width:28px;height:28px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/15px no-repeat;box-shadow:0 4px 10px rgba(227,18,27,.4);transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:4;pointer-events:none}
+.plan.sel::before{opacity:1;transform:none}
+.plan.sel::after{transform:none}
+.ring{display:none}
 .ring::after{content:"";position:absolute;right:-13px;top:-13px;width:28px;height:28px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/15px no-repeat;box-shadow:0 4px 10px rgba(227,18,27,.4);animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
 .ring.bump::after{animation:pop2 .5s cubic-bezier(.34,1.56,.64,1)}
 @keyframes pop{from{transform:scale(0)}to{transform:none}}
@@ -276,6 +282,8 @@ footer a:hover{text-decoration:underline}
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:18px 0 4px;overflow:visible;align-items:stretch}
   .plan{max-width:none;padding:32px 28px 28px}
   .plan-dots{display:none}
+  .ring{display:block}
+  .plan::before,.plan::after{display:none}
   .uses-wrap{position:relative}
   .uses{margin:0;padding:0}
   .utrack{gap:18px}
@@ -598,7 +606,7 @@ footer a:hover{text-decoration:underline}
 
   /* ===== Planos: anel que pula de um plano pro outro ===== */
   const plans = $('#plans'), cards = $$('.plan'), pd = $('#plan-dots'), ring = $('#ring');
-  const isRow = () => plans.scrollWidth > plans.clientWidth + 4;
+  const desk = matchMedia('(min-width:960px)'), isRow = () => !desk.matches;
   let sel = 1, userT = 0, cyc = null, scrollT = null, inView = false;
   cards.forEach((c, i) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Plano ' + (i + 1)); b.onclick = () => { touch(); select(i, true); }; pd.appendChild(b); });
   const pdb = [...pd.children];
@@ -614,11 +622,11 @@ footer a:hover{text-decoration:underline}
   }
   function select(i, scroll) { if (scroll && isRow()) center(cards[i]); placeRing(i); }
   function nearest() { const mid = plans.scrollLeft + plans.clientWidth / 2; let best = 0, d = 1e9; cards.forEach((c, i) => { const dd = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (dd < d) { d = dd; best = i; } }); return best; }
-  plans.addEventListener('scroll', () => { clearTimeout(scrollT); scrollT = setTimeout(() => { if (isRow()) placeRing(nearest()); }, 90); }, { passive: true });
+  let raf = 0; plans.addEventListener('scroll', () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; if (isRow()) { const i = nearest(); if (i !== sel) placeRing(i); } }); }, { passive: true });
   function touch() { userT = Date.now(); }
   ['pointerdown', 'touchstart', 'wheel'].forEach(ev => plans.addEventListener(ev, touch, { passive: true }));
   cards.forEach((c, i) => {
-    c.addEventListener('mouseenter', () => { if (!isRow()) { touch(); placeRing(i); } });
+    c.addEventListener('mouseenter', () => { if (!isRow()) { touch(); if (i !== sel) placeRing(i); } });
     c.addEventListener('click', e => { touch(); if (!e.target.closest('a')) select(i, true); });
     c.addEventListener('focusin', () => { touch(); select(i, false); });
   });
