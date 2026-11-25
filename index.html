@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JSM Net | Internet fibra em Poção de Pedras e região</title>
+<meta name="description" content="Internet fibra óptica com Wi-Fi 6 em Poção de Pedras, Esperantinópolis, São Roberto e São Raimundo do Doca Bezerra. Planos a partir de R$ 75/mês. Contrate pelo WhatsApp.">
+<meta property="og:title" content="JSM Net | Internet fibra a partir de R$ 75/mês">
+<meta property="og:description" content="Planos de 200, 400 e 800 Mega com Wi-Fi 6. Contrate pelo WhatsApp.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#C80E16">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preload" as="image" href="img/pessoa-1.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — edite só aqui
+   ========================================================= */
+window.JSM = {
+  whatsapp: "5599984913298",          // 55 + DDD + número
+  whatsappTexto: "(99) 98491-3298",
+  instagram: "provedor_jsm_net",
+  metaPixelId: "",                    // opcional: ID do Pixel da Meta
+  cnpj: "",                           // ex.: "00.000.000/0001-00" (vazio = não aparece)
+  endereco: "",                       // ex.: "Rua X, 123 - Centro, Poção de Pedras - MA"
+  horario: ""                         // ex.: "Seg a Sáb, 8h às 18h"
+};
+</script>
+<style>
+:root{
+  --red:#E3121B;--red-d:#B80D15;--red-dd:#8E0910;
+  --ink:#121214;--ink2:#3A3A40;--mut:#6B6B74;
+  --bg:#FFFFFF;--soft:#F3F4F6;--line:#E4E5E9;
+  --wa:#25D366;--wa-d:#1EBE5A;--wa-ink:#062B13;
+  --r:18px;--sh:0 1px 2px rgba(16,16,20,.06),0 8px 24px rgba(16,16,20,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{margin:0;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.025em;line-height:1.08}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.sec{padding:64px 0}
+.sec.soft{background:var(--soft)}
+.sec-h{max-width:620px;margin-bottom:28px}
+.sec-h h2{font-size:clamp(28px,7vw,40px);margin-top:8px}
+.sec-h p{margin-top:10px;color:var(--mut);font-size:17px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1a73e8;outline-offset:3px;border-radius:8px}
+
+.eyebrow::before{content:"";width:22px;height:6px;border-radius:1px;background:linear-gradient(90deg,var(--red),#5A060A);transform:skewX(-28deg)}
+.fiber .eyebrow::before{background:linear-gradient(90deg,#FF3A40,#B00C14)}
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:12px;border:0;background:var(--wa);color:var(--wa-ink);font-family:inherit;font-weight:700;font-size:16px;line-height:1;text-decoration:none;cursor:pointer;transition:background .15s ease,transform .15s ease,box-shadow .15s ease;box-shadow:0 6px 16px rgba(37,211,102,.28)}
+.btn:hover{background:var(--wa-d)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:22px;height:22px;flex:0 0 auto}
+.btn.block{display:flex;width:100%}
+.btn.sm{min-height:42px;padding:0 16px;font-size:14px;border-radius:10px;box-shadow:none}
+.btn.sm svg{width:18px;height:18px}
+
+/* ---------- topo fixo ---------- */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s ease,box-shadow .2s ease}
+.top.scrolled{border-color:var(--line);box-shadow:0 4px 18px rgba(0,0,0,.05)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.top .logo img{height:38px;width:auto}
+.top nav{display:none;gap:28px}
+.top nav a{color:var(--ink2);text-decoration:none;font-weight:600;font-size:15px}
+.top nav a:hover{color:var(--red)}
+.top .btn span.l{display:none;margin-left:-5px}
+
+/* ---------- abertura ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(90% 70% at 85% 30%,#F0262E 0%,rgba(240,38,46,0) 60%),linear-gradient(160deg,#D4111A 0%,#B00C14 55%,#7E070D 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/fibra.webp) right center/cover no-repeat;opacity:.16;mix-blend-mode:screen;pointer-events:none}
+.mark{position:absolute;left:-90px;bottom:-40px;width:520px;opacity:.07;pointer-events:none;transform:rotate(-8deg)}
+.sw{position:relative;display:inline-block;white-space:nowrap}
+.sw svg{position:absolute;left:-2%;bottom:-12px;width:104%;height:18px;overflow:visible}
+.sw path{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:draw 1.1s .7s cubic-bezier(.6,0,.2,1) forwards;opacity:.9}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero .txt>*{opacity:0;animation:up .7s cubic-bezier(.2,.8,.2,1) forwards}
+.hero .txt>*:nth-child(2){animation-delay:.08s}.hero .txt>*:nth-child(3){animation-delay:.16s}.hero .txt>*:nth-child(4){animation-delay:.24s}.hero .txt>*:nth-child(5){animation-delay:.32s}.hero .txt>*:nth-child(6){animation-delay:.4s}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr;gap:8px;padding-top:34px}
+.loc{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:600}
+.loc svg{width:16px;height:16px}
+.hero h1{margin-top:16px;font-size:clamp(36px,10vw,60px);max-width:620px}
+.hero .lead{margin-top:14px;max-width:520px;font-size:17px;color:rgba(255,255,255,.9)}
+.from{display:flex;align-items:flex-end;gap:14px;margin-top:22px}
+.from small{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,.85);line-height:1.2}
+.price-big{display:flex;align-items:flex-start;font-weight:800;line-height:.9;letter-spacing:-.04em}
+.price-big .cur{font-size:20px;margin:6px 4px 0 0}
+.price-big .int{font-size:64px}
+.price-big .dec{display:flex;flex-direction:column;font-size:22px;margin:4px 0 0 2px;letter-spacing:-.02em}
+.price-big .dec em{font-style:normal;font-size:13px;font-weight:600;letter-spacing:0;opacity:.85;margin-top:4px}
+.hero .cta{margin-top:22px;max-width:420px}
+.hero .btn{box-shadow:0 10px 28px rgba(0,0,0,.25)}
+.seals{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:14px;font-weight:600;color:rgba(255,255,255,.92)}
+.seals span{display:inline-flex;align-items:center;gap:7px}
+.seals svg{width:18px;height:18px}
+.stage{position:relative;height:360px;margin-top:10px}
+.person{position:absolute;left:50%;bottom:0;height:100%;width:auto;max-width:none;transform:translateX(-50%) translateY(14px);opacity:0;transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 20px 30px rgba(0,0,0,.25))}
+.person.on{opacity:1;transform:translateX(-50%)}
+.tagcard{position:absolute;z-index:2;right:4px;bottom:46px;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;border-radius:14px;background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.25);font-size:14px;font-weight:700;line-height:1.2;max-width:210px;transition:opacity .35s ease,transform .35s ease}
+.tagcard.out{opacity:0;transform:translateY(8px)}
+.tagcard i{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#FDECEC;color:var(--red)}
+.tagcard i svg{width:20px;height:20px}
+.tagcard small{display:block;font-size:12px;font-weight:600;color:var(--mut)}
+.pips{position:absolute;z-index:2;left:0;bottom:16px;display:flex;gap:6px}
+.pips button{width:8px;height:8px;padding:0;border:0;border-radius:8px;background:rgba(255,255,255,.45);cursor:pointer;transition:width .3s ease,background .3s ease}
+.pips button.on{width:24px;background:#fff}
+
+/* ---------- planos ---------- */
+.plans{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:16px 20px 18px;scrollbar-width:none}
+.plans::-webkit-scrollbar{display:none}
+.plan{position:relative;flex:0 0 82%;max-width:360px;scroll-snap-align:center;display:flex;flex-direction:column;padding:26px 22px 22px;border-radius:var(--r);background:#fff;border:1px solid var(--line);box-shadow:var(--sh);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.plans{position:relative}
+.ring{position:absolute;z-index:3;left:0;top:0;width:0;height:0;pointer-events:none;border-radius:24px;border:3px solid var(--red);box-shadow:0 0 0 6px rgba(227,18,27,.12),0 18px 40px rgba(227,18,27,.2);opacity:0;transition:transform .6s cubic-bezier(.34,1.56,.64,1),width .4s ease,height .4s ease,opacity .3s ease}
+.ring.ready{opacity:1}
+.ring::after{content:"";position:absolute;right:-13px;top:-13px;width:28px;height:28px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/15px no-repeat;box-shadow:0 4px 10px rgba(227,18,27,.4);animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
+.ring.bump::after{animation:pop2 .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{transform:scale(0)}to{transform:none}}
+@keyframes pop2{0%{transform:scale(.4)}100%{transform:none}}
+.plan{cursor:pointer}
+.plan .btn{transition:background .15s ease,transform .15s ease,box-shadow .3s ease}
+.plan:not(.sel) .btn{background:#E9FBEF;box-shadow:none;color:#0B6B2E}
+.plan:not(.sel) .btn:hover{background:var(--wa);color:var(--wa-ink)}
+
+.badge{position:absolute;z-index:4;top:-13px;left:22px;padding:5px 14px;border-radius:4px;transform:skewX(-14deg);background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.badge i{display:inline-block;font-style:normal;transform:skewX(14deg)}
+.plan .kind{font-size:13px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+.speed{display:flex;align-items:baseline;gap:6px;margin-top:6px}
+.speed b{display:inline-block;font-size:60px;font-weight:800;letter-spacing:-.04em;line-height:1;padding-right:.08em;transform:skewX(-9deg);background:linear-gradient(180deg,#FF2A31 0%,#D0101A 50%,#3E0407 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.speed span{display:inline-block;font-size:20px;font-weight:800;color:var(--ink);transform:skewX(-9deg)}
+.ideal{margin-top:8px;color:var(--ink2);font-size:15px;min-height:46px}
+.incl{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:10px;font-size:15px;font-weight:600}
+.incl li{display:flex;align-items:center;gap:10px}
+.incl svg{width:20px;height:20px;flex:0 0 auto;color:var(--red)}
+.plan .price-big{color:var(--ink);margin:22px 0 18px}
+.plan .price-big .int{font-size:56px}
+.plan .price-big .dec em{color:var(--mut);opacity:1}
+.plan .btn{margin-top:auto}
+.plan-dots{display:flex;justify-content:center;gap:6px;margin-top:6px}
+.plan-dots button{width:8px;height:8px;padding:0;border:0;border-radius:8px;background:#CDCED4;cursor:pointer;transition:width .3s ease,background .3s ease}
+.plan-dots button.on{width:24px;background:var(--red)}
+.fine{margin-top:16px;font-size:13px;color:var(--mut)}
+
+/* ---------- usos ---------- */
+.uses{overflow:hidden;margin:0 -20px;padding:4px 20px 8px}
+.utrack{display:flex;gap:14px;transition:transform .7s cubic-bezier(.22,.8,.2,1);will-change:transform;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.utrack.drag{transition:none}
+.use{position:relative;flex:0 0 76%;max-width:320px;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;color:#fff;background:#ddd}
+.use img{pointer-events:none;-webkit-user-drag:none}
+.use img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.use:hover img{transform:scale(1.04)}
+.use::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.78) 100%)}
+.use .cap{position:absolute;z-index:1;left:18px;right:18px;bottom:18px}
+.use h3{font-size:22px}
+.use a{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.95);color:var(--ink);font-size:13px;font-weight:700;text-decoration:none}
+.use a b{color:var(--red)}
+.use-dots{display:flex;justify-content:center;gap:6px;margin-top:16px}
+.use-dots button{width:8px;height:8px;padding:0;border:0;border-radius:8px;background:#CDCED4;cursor:pointer;transition:width .3s ease,background .3s ease}
+.use-dots button.on{width:24px;background:var(--red)}
+.use .cap{transform:translateY(8px);opacity:.85;transition:transform .5s ease,opacity .5s ease}
+.use.cur .cap{transform:none;opacity:1}
+.use.cur img{transform:scale(1.05)}
+
+/* ---------- fibra ---------- */
+.fiber{position:relative;overflow:hidden;color:#fff;background:#060607}
+.fiber .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;opacity:.9}
+.fiber::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#060607 0%,rgba(6,6,7,.85) 45%,rgba(6,6,7,.2) 100%)}
+.fiber .wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:72px}
+.fiber .eyebrow{color:#FF5A60}
+.fiber h2{font-size:clamp(30px,8vw,46px);max-width:560px;margin-top:8px}
+.fiber p.t{margin-top:14px;max-width:480px;color:rgba(255,255,255,.82);font-size:17px}
+.fiber .btn{margin-top:26px}
+
+/* ---------- wi-fi 6 ---------- */
+.wifi{display:grid;gap:28px;align-items:center}
+.wifi .pic{position:relative;border-radius:24px;background:radial-gradient(60% 60% at 50% 55%,#fff 0%,#EEF0F3 70%);padding:28px 24px 34px}
+.wifi .pic img{position:relative;margin:0 auto;width:88%;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.wifi .pic .shadow{position:absolute;left:50%;bottom:26px;width:56%;height:18px;margin-left:-28%;border-radius:50%;background:rgba(0,0,0,.12);filter:blur(8px);animation:sh 5s ease-in-out infinite}
+@keyframes sh{50%{transform:scale(.85);opacity:.6}}
+.sig{position:absolute;top:18px;right:20px;width:64px;height:48px}
+.sig path{fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;opacity:.15;animation:sig 1.8s ease-in-out infinite}
+.sig path:nth-child(2){animation-delay:.25s}.sig path:nth-child(3){animation-delay:.5s}
+@keyframes sig{30%{opacity:1}70%{opacity:.15}}
+.wifi .pic .lbl{position:absolute;top:16px;left:16px;padding:6px 12px;border-radius:999px;background:var(--ink);color:#fff;font-size:13px;font-weight:800;letter-spacing:.02em}
+.ben{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.ben li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.ben i{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#FDECEC;color:var(--red)}
+.ben i svg{width:22px;height:22px}
+.ben b{display:block;font-size:16px}
+.ben span{color:var(--mut);font-size:15px}
+
+/* ---------- como contratar ---------- */
+.how{display:grid;gap:10px;align-items:end}
+.how .tech{display:none}
+.steps{list-style:none;counter-reset:s;margin:0 0 24px;padding:0;display:grid;gap:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.steps li::before{content:counter(s);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-weight:800;font-size:18px}
+.steps b{display:block}
+.steps li:nth-child(2){transition-delay:.12s}.steps li:nth-child(3){transition-delay:.24s}
+.city:nth-child(2){transition-delay:.06s}
+.steps span{color:var(--mut);font-size:15px}
+
+/* ---------- cidades ---------- */
+.cities{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.city{display:flex;align-items:center;gap:10px;padding:16px;border-radius:14px;background:var(--soft);font-weight:700;font-size:15px;line-height:1.25}
+.city svg{width:20px;height:20px;flex:0 0 auto;color:var(--red)}
+.city-more{margin-top:16px;color:var(--mut);font-size:15px}
+.city-more a{color:var(--red);font-weight:700}
+
+/* ---------- dúvidas ---------- */
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-weight:700;font-size:17px;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:0 0 auto;width:12px;height:12px;border-right:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(45deg) translate(-3px,-3px);transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(225deg)}
+.faq details p{padding:0 0 20px;color:var(--ink2)}
+
+/* ---------- chamada final ---------- */
+.final{position:relative;overflow:hidden;background:linear-gradient(135deg,#D4111A,#9A0A11);color:#fff;text-align:center}
+.final .mark{left:auto;right:-120px;bottom:-60px;transform:rotate(10deg)}
+.final .wrap{position:relative}
+.final .wrap{padding-top:60px;padding-bottom:60px}
+.final h2{font-size:clamp(28px,7.5vw,42px)}
+.final p{margin:12px auto 0;max-width:460px;color:rgba(255,255,255,.88);font-size:17px}
+.final .btn{margin-top:26px;min-width:min(100%,360px)}
+.job{margin-top:28px;font-size:14px;color:rgba(255,255,255,.85)}
+.job a{color:#fff;font-weight:700}
+
+footer{background:#0E0E10;color:#A7A7B0;font-size:14px}
+footer .wrap{padding-top:44px;padding-bottom:120px;display:grid;gap:22px}
+footer img{height:44px;width:auto}
+footer a{color:#fff;text-decoration:none}
+footer a:hover{text-decoration:underline}
+.f-links{display:grid;gap:8px}
+.f-links a,.f-links span{display:inline-flex;align-items:center;gap:8px}
+.f-links svg{width:18px;height:18px}
+.legal{border-top:1px solid #26262B;padding-top:18px;font-size:13px}
+
+/* ---------- barra fixa (celular) ---------- */
+.bar{position:fixed;z-index:40;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(0,0,0,.08);transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.bar.show{transform:none}
+.bar .p{line-height:1.15;font-size:12px;color:var(--mut);font-weight:600;white-space:nowrap}
+.bar .p b{display:block;color:var(--ink);font-size:18px;font-weight:800}
+.bar .btn{flex:1;min-height:48px}
+
+/* ---------- entrada ---------- */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- tablet / computador ---------- */
+@media (min-width:640px){
+  .top .btn span.l{display:inline}
+  .cities{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width:960px){
+  .wrap{padding:0 32px}
+  .sec{padding:96px 0}
+  .top .wrap{height:76px}
+  .top .logo img{height:44px}
+  .top nav{display:flex}
+  .hero .wrap{grid-template-columns:1.05fr .95fr;gap:24px;padding-top:56px;min-height:600px}
+  .hero .txt{padding-bottom:64px;align-self:center}
+  .stage{height:560px;margin:0;align-self:end}
+  .mark{left:auto;right:30%;bottom:-60px;width:640px}
+  .tagcard{right:-8px;bottom:120px}
+  .pips{left:auto;right:0;bottom:24px}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:18px 0 4px;overflow:visible;align-items:stretch}
+  .plan{max-width:none;padding:32px 28px 28px}
+  .plan-dots{display:none}
+  .uses-wrap{position:relative}
+  .uses{margin:0;padding:0}
+  .utrack{gap:18px}
+  .use{flex-basis:calc((100% - 36px)/3);max-width:none}
+  .use:hover .cap{transform:none;opacity:1}
+  .wifi{grid-template-columns:1fr 1fr;gap:64px}
+  .how{grid-template-columns:320px 1fr;gap:56px}
+  .how .tech{display:block;align-self:end;margin-bottom:-96px}
+  .how .tech img{height:600px;width:auto;margin:0 auto}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .steps li{grid-template-columns:1fr;align-items:start;padding:22px}
+  footer .wrap{grid-template-columns:1.2fr 1fr 1fr;padding-bottom:48px}
+  .legal{grid-column:1/-1}
+  .bar{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script>document.body.classList.add('js')</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></symbol>
+  <symbol id="ck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></g></symbol>
+  <symbol id="bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+  <symbol id="head" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2.5" y="14" width="4.5" height="6" rx="2"/><rect x="17" y="14" width="4.5" height="6" rx="2"/></g></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10 9.5v5l4-2.5-4-2.5z"/></g></symbol>
+  <symbol id="game" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 11v3M5.5 12.5h3M15 12h.01M17.5 13.5h.01"/></g></symbol>
+  <symbol id="lap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></g></symbol>
+  <symbol id="home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z"/></g></symbol>
+  <symbol id="dev" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="13" height="10" rx="1.5"/><rect x="16" y="8" width="6" height="12" rx="1.5"/><path d="M6 18h6"/></g></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+  <symbol id="ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/></g></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- ===================== TOPO ===================== -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="JSM Net, início"><img src="img/logo-cor.webp" width="640" height="210" alt="JSM Net Provedor de Internet"></a>
+    <nav aria-label="Seções">
+      <a href="#planos">Planos</a>
+      <a href="#wifi">Wi-Fi 6</a>
+      <a href="#cidades">Cidades</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn sm" href="#" data-wa="Olá! Quero contratar a internet da JSM Net."><svg aria-hidden="true"><use href="#wa"/></svg>Contratar<span class="l">pelo WhatsApp</span></a>
+  </div>
+</header>
+
+<main>
+<!-- ===================== ABERTURA ===================== -->
+<section class="hero" aria-labelledby="h1">
+  <img class="mark" src="img/globo-branco.webp" width="700" height="447" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="txt">
+      <span class="loc"><svg aria-hidden="true"><use href="#pin"/></svg>Poção de Pedras e região</span>
+      <h1 id="h1">Internet fibra <span class="sw">rápida e estável<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 4, 190 2, 297 9"/></svg></span> pra sua casa</h1>
+      <p class="lead">Planos de 200 a 800 Mega com roteador Wi-Fi 6. Fale com a gente no WhatsApp e confira a cobertura no seu endereço.</p>
+      <div class="from">
+        <small>Planos a<br>partir de</small>
+        <div class="price-big"><span class="cur">R$</span><span class="int">75</span><span class="dec">,00<em>/mês</em></span></div>
+      </div>
+      <a class="btn block cta" id="cta-hero" href="#" data-wa="Olá! Vim pelo Instagram e quero contratar a internet da JSM Net."><svg aria-hidden="true"><use href="#wa"/></svg>Contratar pelo WhatsApp</a>
+      <div class="seals">
+        <span><svg aria-hidden="true"><use href="#bolt"/></svg>Fibra óptica</span>
+        <span><svg aria-hidden="true"><use href="#wifi"/></svg>Wi-Fi 6</span>
+        <span><svg aria-hidden="true"><use href="#head"/></svg>Suporte local</span>
+      </div>
+    </div>
+    <div class="stage" id="stage" aria-hidden="true">
+      <img class="person on" src="img/pessoa-1.webp" width="646" height="1000" alt="" data-t="Redes sociais e vídeos" data-s="200 Mega por R$ 75" data-i="dev">
+      <img class="person" src="img/pessoa-2.webp" width="647" height="1000" alt="" loading="lazy" data-t="Jogos online sem travar" data-s="800 Mega por R$ 100" data-i="game">
+      <img class="person" src="img/pessoa-3.webp" width="687" height="1000" alt="" loading="lazy" data-t="Home office estável" data-s="400 Mega por R$ 85" data-i="lap">
+      <div class="tagcard" id="tagcard"><i><svg><use href="#dev" id="tag-i"/></svg></i><div><span id="tag-t">Redes sociais e vídeos</span><small id="tag-s">200 Mega por R$ 75</small></div></div>
+      <div class="pips" id="pips"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PLANOS ===================== -->
+<section class="sec soft" id="planos" aria-labelledby="h-planos">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="eyebrow">Planos fibra</span>
+      <h2 id="h-planos">Escolha a velocidade ideal pra sua casa</h2>
+      <p>Toque em "Quero esse plano" e a conversa já abre no WhatsApp com o plano escolhido.</p>
+    </div>
+    <div class="plans" id="plans">
+      <span class="ring" id="ring" aria-hidden="true"></span>
+      <article class="plan" id="p200">
+        <span class="kind">Fibra óptica</span>
+        <div class="speed"><b data-count="200">200</b><span>MEGA</span></div>
+        <p class="ideal">Ideal para navegar, redes sociais e assistir vídeos.</p>
+        <ul class="incl">
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Roteador Wi-Fi 6</li>
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Fibra até a sua casa</li>
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Suporte local</li>
+        </ul>
+        <div class="price-big"><span class="cur">R$</span><span class="int">75</span><span class="dec">,00<em>/mês</em></span></div>
+        <a class="btn block" href="#" data-wa="Olá! Quero contratar o plano de 200 Mega por R$ 75,00/mês."><svg aria-hidden="true"><use href="#wa"/></svg>Quero esse plano</a>
+      </article>
+      <article class="plan best" id="p400">
+        <span class="badge"><i>Mais escolhido</i></span>
+        <span class="kind">Fibra óptica</span>
+        <div class="speed"><b data-count="400">400</b><span>MEGA</span></div>
+        <p class="ideal">Ideal para a família toda conectada, séries e home office.</p>
+        <ul class="incl">
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Roteador Wi-Fi 6</li>
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Fibra até a sua casa</li>
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Suporte local</li>
+        </ul>
+        <div class="price-big"><span class="cur">R$</span><span class="int">85</span><span class="dec">,00<em>/mês</em></span></div>
+        <a class="btn block" href="#" data-wa="Olá! Quero contratar o plano de 400 Mega por R$ 85,00/mês."><svg aria-hidden="true"><use href="#wa"/></svg>Quero esse plano</a>
+      </article>
+      <article class="plan" id="p800">
+        <span class="kind">Fibra óptica</span>
+        <div class="speed"><b data-count="800">800</b><span>MEGA</span></div>
+        <p class="ideal">Ideal para jogos online, streaming em 4K e muitos aparelhos.</p>
+        <ul class="incl">
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Roteador Wi-Fi 6</li>
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Fibra até a sua casa</li>
+          <li><svg aria-hidden="true"><use href="#ck"/></svg>Suporte local</li>
+        </ul>
+        <div class="price-big"><span class="cur">R$</span><span class="int">100</span><span class="dec">,00<em>/mês</em></span></div>
+        <a class="btn block" href="#" data-wa="Olá! Quero contratar o plano de 800 Mega por R$ 100,00/mês."><svg aria-hidden="true"><use href="#wa"/></svg>Quero esse plano</a>
+      </article>
+    </div>
+    <div class="plan-dots" id="plan-dots"></div>
+    <p class="fine rv">Disponibilidade sujeita à cobertura no seu endereço. Condições de instalação informadas no atendimento pelo WhatsApp.</p>
+  </div>
+</section>
+
+<!-- ===================== USOS ===================== -->
+<section class="sec" aria-labelledby="h-usos">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="eyebrow">Pra que você usa?</span>
+      <h2 id="h-usos">Tem um plano certo pra cada rotina</h2>
+    </div>
+    <div class="uses" id="uses"><div class="utrack" id="utrack">
+      <article class="use rv"><img src="img/uso-filmes.webp" width="820" height="820" loading="lazy" alt="Casal assistindo filme no sofá com pipoca"><div class="cap"><h3>Filmes e séries</h3><a href="#p400" data-go="p400">Indicado: <b>400 Mega</b><svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a></div></article>
+      <article class="use rv"><img src="img/uso-jogos.webp" width="820" height="820" loading="lazy" alt="Rapaz jogando videogame na sala"><div class="cap"><h3>Jogos online</h3><a href="#p800" data-go="p800">Indicado: <b>800 Mega</b><svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a></div></article>
+      <article class="use rv"><img src="img/uso-homeoffice.webp" width="820" height="820" loading="lazy" alt="Mulher trabalhando no notebook em casa"><div class="cap"><h3>Home office e estudos</h3><a href="#p400" data-go="p400">Indicado: <b>400 Mega</b><svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a></div></article>
+      <article class="use rv"><img src="img/uso-familia.webp" width="820" height="820" loading="lazy" alt="Família usando celulares e tablets na cozinha"><div class="cap"><h3>Família conectada</h3><a href="#p800" data-go="p800">Indicado: <b>800 Mega</b><svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a></div></article>
+    </div></div>
+    <div class="use-dots" id="use-dots"></div>
+  </div>
+</section>
+
+<!-- ===================== FIBRA ===================== -->
+<section class="fiber" aria-labelledby="h-fibra">
+  <img class="bg" src="img/fibra.webp" width="1600" height="1067" loading="lazy" alt="">
+  <div class="wrap">
+    <span class="eyebrow rv">100% fibra óptica</span>
+    <h2 class="rv" id="h-fibra">A conexão chega por fibra até dentro da sua casa</h2>
+    <p class="t rv">Fibra óptica é a tecnologia mais estável que existe para internet residencial: menos quedas, menos oscilação e a velocidade que você contratou.</p>
+    <a class="btn rv" href="#" data-wa="Olá! Quero saber se a fibra da JSM Net chega no meu endereço."><svg aria-hidden="true"><use href="#wa"/></svg>Consultar meu endereço</a>
+  </div>
+</section>
+
+<!-- ===================== WI-FI 6 ===================== -->
+<section class="sec" id="wifi" aria-labelledby="h-wifi">
+  <div class="wrap wifi">
+    <div class="pic rv"><span class="lbl">Wi-Fi 6</span><svg class="sig" viewBox="0 0 64 48" aria-hidden="true"><path d="M26 40a8 8 0 0 1 12 0"/><path d="M17 31a21 21 0 0 1 30 0"/><path d="M8 22a34 34 0 0 1 48 0"/></svg><span class="shadow"></span><img src="img/roteador.webp" width="760" height="601" loading="lazy" alt="Roteador Wi-Fi 6 branco com quatro antenas"></div>
+    <div>
+      <div class="sec-h rv" style="margin-bottom:0">
+        <span class="eyebrow">Equipamento</span>
+        <h2 id="h-wifi">Roteador Wi-Fi 6 pra internet chegar forte na casa toda</h2>
+      </div>
+      <ul class="ben">
+        <li class="rv"><i><svg aria-hidden="true"><use href="#home"/></svg></i><div><b>Mais alcance</b><span>Sinal mais forte nos cômodos da casa.</span></div></li>
+        <li class="rv"><i><svg aria-hidden="true"><use href="#dev"/></svg></i><div><b>Vários aparelhos ao mesmo tempo</b><span>Celulares, TV e computador sem disputar a conexão.</span></div></li>
+        <li class="rv"><i><svg aria-hidden="true"><use href="#shield"/></svg></i><div><b>Mais estabilidade</b><span>Menos travadas em chamadas de vídeo e jogos.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO CONTRATAR ===================== -->
+<section class="sec soft" aria-labelledby="h-como" style="overflow:hidden">
+  <div class="wrap how">
+    <div class="tech"><img src="img/tecnico.webp" width="400" height="1100" loading="lazy" alt="Técnico da JSM Net segurando um roteador"></div>
+    <div>
+      <div class="sec-h rv">
+        <span class="eyebrow">Simples e rápido</span>
+        <h2 id="h-como">Contratar leva poucos minutos</h2>
+      </div>
+      <ol class="steps">
+        <li class="rv"><div><b>Escolha o plano</b><span>200, 400 ou 800 Mega.</span></div></li>
+        <li class="rv"><div><b>Chame no WhatsApp</b><span>Envie seu endereço para conferirmos a cobertura.</span></div></li>
+        <li class="rv"><div><b>Receba a instalação</b><span>Nossa equipe técnica vai até a sua casa.</span></div></li>
+      </ol>
+      <a class="btn rv" href="#" data-wa="Olá! Quero contratar a internet da JSM Net."><svg aria-hidden="true"><use href="#wa"/></svg>Começar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CIDADES ===================== -->
+<section class="sec" id="cidades" aria-labelledby="h-cid">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="eyebrow">Cobertura</span>
+      <h2 id="h-cid">Cidades atendidas</h2>
+    </div>
+    <div class="cities rv">
+      <div class="city"><svg aria-hidden="true"><use href="#pin"/></svg>Poção de Pedras</div>
+      <div class="city"><svg aria-hidden="true"><use href="#pin"/></svg>Esperantinópolis</div>
+      <div class="city"><svg aria-hidden="true"><use href="#pin"/></svg>São Roberto</div>
+      <div class="city"><svg aria-hidden="true"><use href="#pin"/></svg>São Raimundo do Doca Bezerra</div>
+    </div>
+    <p class="city-more rv">Mora em outra localidade? <a href="#" data-wa="Olá! Quero saber se a JSM Net atende no meu endereço.">Consulte pelo WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- ===================== DÚVIDAS ===================== -->
+<section class="sec soft" id="duvidas" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 id="h-faq">Perguntas antes de contratar</h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>Como faço para contratar?</summary><p>Toque em qualquer botão verde da página. A conversa abre no WhatsApp da JSM Net, você informa o plano e o endereço, e a equipe confirma a cobertura e agenda a instalação.</p></details>
+      <details><summary>A JSM Net atende no meu endereço?</summary><p>Atendemos Poção de Pedras, Esperantinópolis, São Roberto e São Raimundo do Doca Bezerra. Envie seu endereço pelo WhatsApp para confirmarmos a cobertura na sua rua.</p></details>
+      <details><summary>O roteador Wi-Fi 6 vem junto?</summary><p>A instalação é feita com roteador Wi-Fi 6. As condições do equipamento são explicadas no atendimento pelo WhatsApp.</p></details>
+      <details><summary>Tem taxa de instalação ou fidelidade?</summary><p>As condições de instalação e de contrato são informadas no atendimento pelo WhatsApp, de acordo com o plano e o seu endereço.</p></details>
+      <details><summary>Como funciona o suporte?</summary><p>O suporte é local: a equipe é da região e o atendimento é feito pelo WhatsApp, com visita técnica quando necessário.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CHAMADA FINAL ===================== -->
+<section class="final" aria-labelledby="h-final">
+  <img class="mark" src="img/globo-branco.webp" width="700" height="447" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <h2 class="rv" id="h-final">Pronto pra ter internet fibra em casa?</h2>
+    <p class="rv">Chama a JSM Net no WhatsApp. A gente confere seu endereço e agenda a instalação.</p>
+    <a class="btn rv" id="cta-final" href="#" data-wa="Olá! Quero contratar a internet da JSM Net."><svg aria-hidden="true"><use href="#wa"/></svg>Contratar pelo WhatsApp</a>
+    <p class="job rv">Trabalhe conosco: vaga de técnico instalador em Esperantinópolis. <a href="#" data-wa="Olá! Tenho interesse na vaga de técnico instalador.">Enviar currículo</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><img src="img/logo-branca.webp" width="640" height="210" alt="JSM Net" loading="lazy"><p style="margin-top:12px;max-width:300px">Internet fibra óptica em Poção de Pedras e região.</p></div>
+    <div class="f-links">
+      <a id="f-wa" href="#"><svg aria-hidden="true"><use href="#wa"/></svg><span id="f-wa-t"></span></a>
+      <a id="f-ig" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ig"/></svg><span id="f-ig-t"></span></a>
+      <span id="f-hr" hidden></span>
+    </div>
+    <div class="f-links">
+      <span id="f-end" hidden></span>
+      <span>Poção de Pedras · Esperantinópolis · São Roberto · São Raimundo do Doca Bezerra</span>
+    </div>
+    <p class="legal">© 2026 JSM Net · Provedor de Internet<span id="f-cnpj"></span></p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="p">A partir de<b>R$ 75/mês</b></div>
+  <a class="btn" href="#" data-wa="Olá! Vim pelo Instagram e quero contratar a internet da JSM Net." tabindex="-1"><svg aria-hidden="true"><use href="#wa"/></svg>Contratar</a>
+</div>
+
+<script>
+{
+  const C = window.JSM || {};
+  const num = (C.whatsapp || '').replace(/\D/g, '');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+  /* Pixel da Meta (opcional) */
+  const pix = (C.metaPixelId || '').replace(/\D/g, ''); let pixelOn = false;
+  if (pix) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', pix); fbq('track', 'PageView'); pixelOn = true;
+  }
+
+  /* Links do WhatsApp */
+  $$('[data-wa]').forEach(a => {
+    a.href = 'https://wa.me/' + num + '?text=' + encodeURIComponent(a.dataset.wa);
+    a.target = '_blank'; a.rel = 'noopener';
+    a.addEventListener('click', () => { if (pixelOn) fbq('track', 'Contact'); });
+  });
+
+  /* Rodapé */
+  $('#f-wa').href = 'https://wa.me/' + num; $('#f-wa-t').textContent = C.whatsappTexto || num;
+  const ig = (C.instagram || '').replace(/^@/, '');
+  if (ig) { $('#f-ig').href = 'https://instagram.com/' + ig; $('#f-ig-t').textContent = '@' + ig; } else $('#f-ig').hidden = true;
+  if (C.horario) { $('#f-hr').textContent = 'Atendimento: ' + C.horario; $('#f-hr').hidden = false; }
+  if (C.endereco) { $('#f-end').textContent = C.endereco; $('#f-end').hidden = false; }
+  if (C.cnpj) $('#f-cnpj').textContent = ' · CNPJ ' + C.cnpj;
+
+  /* Topo com sombra ao rolar */
+  const top = $('#top');
+  addEventListener('scroll', () => top.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+  /* Abertura: troca de pessoas */
+  const people = $$('.person'), card = $('#tagcard'), pips = $('#pips');
+  let pi = 0, pt = null;
+  people.forEach((p, i) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Imagem ' + (i + 1)); b.onclick = () => { show(i); loop(); }; pips.appendChild(b); });
+  const pb = [...pips.children];
+  function show(i) {
+    people[pi].classList.remove('on'); pi = i; people[pi].classList.add('on');
+    pb.forEach((b, k) => b.classList.toggle('on', k === pi));
+    card.classList.add('out');
+    setTimeout(() => {
+      $('#tag-t').textContent = people[pi].dataset.t; $('#tag-s').textContent = people[pi].dataset.s;
+      $('#tag-i').setAttribute('href', '#' + people[pi].dataset.i); card.classList.remove('out');
+    }, 350);
+  }
+  function loop() { clearInterval(pt); if (!reduce) pt = setInterval(() => show((pi + 1) % people.length), 5000); }
+  pb[0].classList.add('on'); loop();
+  document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(pt) : loop());
+
+  /* ===== Planos: anel que pula de um plano pro outro ===== */
+  const plans = $('#plans'), cards = $$('.plan'), pd = $('#plan-dots'), ring = $('#ring');
+  const isRow = () => plans.scrollWidth > plans.clientWidth + 4;
+  let sel = 1, userT = 0, cyc = null, scrollT = null, inView = false;
+  cards.forEach((c, i) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Plano ' + (i + 1)); b.onclick = () => { touch(); select(i, true); }; pd.appendChild(b); });
+  const pdb = [...pd.children];
+  function center(c, smooth = true) { plans.scrollTo({ left: c.offsetLeft - (plans.clientWidth - c.offsetWidth) / 2, behavior: smooth && !reduce ? 'smooth' : 'auto' }); }
+  function placeRing(i) {
+    const changed = i !== sel; sel = i; const c = cards[i], o = 7;
+    ring.style.width = (c.offsetWidth + o * 2) + 'px'; ring.style.height = (c.offsetHeight + o * 2) + 'px';
+    ring.style.transform = `translate(${c.offsetLeft - o}px,${c.offsetTop - o}px)`;
+    ring.classList.add('ready');
+    if (changed) { ring.classList.remove('bump'); void ring.offsetWidth; ring.classList.add('bump'); }
+    cards.forEach((k, j) => k.classList.toggle('sel', j === i));
+    pdb.forEach((b, k) => b.classList.toggle('on', k === i));
+  }
+  function select(i, scroll) { if (scroll && isRow()) center(cards[i]); placeRing(i); }
+  function nearest() { const mid = plans.scrollLeft + plans.clientWidth / 2; let best = 0, d = 1e9; cards.forEach((c, i) => { const dd = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (dd < d) { d = dd; best = i; } }); return best; }
+  plans.addEventListener('scroll', () => { clearTimeout(scrollT); scrollT = setTimeout(() => { if (isRow()) placeRing(nearest()); }, 90); }, { passive: true });
+  function touch() { userT = Date.now(); }
+  ['pointerdown', 'touchstart', 'wheel'].forEach(ev => plans.addEventListener(ev, touch, { passive: true }));
+  cards.forEach((c, i) => {
+    c.addEventListener('mouseenter', () => { if (!isRow()) { touch(); placeRing(i); } });
+    c.addEventListener('click', e => { touch(); if (!e.target.closest('a')) select(i, true); });
+    c.addEventListener('focusin', () => { touch(); select(i, false); });
+  });
+  function cycle() { if (reduce || !inView || Date.now() - userT < 7000) return; select((sel + 1) % cards.length, true); }
+  if (isRow()) center(cards[1], false);
+  requestAnimationFrame(() => placeRing(1));
+  addEventListener('resize', () => placeRing(sel));
+  if (document.fonts) document.fonts.ready.then(() => placeRing(sel));
+
+  /* contador nas velocidades */
+  function count(el) { const end = +el.dataset.count, t0 = performance.now(), d = 1200; (function f(t) { const p = Math.min(1, (t - t0) / d); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(t0); }
+
+  /* "Indicado: X Mega" leva ao plano e marca */
+  $$('[data-go]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); const i = cards.indexOf(document.getElementById(a.dataset.go)); touch();
+    $('#planos').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    setTimeout(() => select(i, true), 450);
+  }));
+
+  /* ===== Carrossel "Pra que você usa?" (motor próprio, em loop) ===== */
+  const ut = $('#utrack'), uv = $('#uses'), orig = [...ut.children], n = orig.length, ud = $('#use-dots');
+  orig.forEach(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.classList.add('in'); k.querySelectorAll('a').forEach(a => a.tabIndex = -1); ut.appendChild(k); });
+  const all = [...ut.children];
+  orig.forEach((c, i) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Foto ' + (i + 1)); b.onclick = () => { uTouch(); goUse(i); }; ud.appendChild(b); });
+  const udb = [...ud.children];
+  let ui = 0, uUser = 0, uInView = false, hover = false;
+  const step = () => all[1].offsetLeft - all[0].offsetLeft;
+  function setX(px, anim) { ut.classList.toggle('drag', !anim); ut.style.transform = `translate3d(${-px}px,0,0)`; }
+  function markUse() { udb.forEach((d, k) => d.classList.toggle('on', k === ui % n)); all.forEach((c, k) => c.classList.toggle('cur', k === ui)); }
+  function goUse(i, anim = true) {
+    if (i < 0) { ui = n; setX(step() * n, false); void ut.offsetWidth; i = n - 1; }
+    ui = i; setX(step() * i, anim && !reduce); markUse();
+  }
+  ut.addEventListener('transitionend', e => {
+    if (e.target !== ut) return;
+    if (ui >= n) { ui -= n; setX(step() * ui, false); void ut.offsetWidth; ut.classList.remove('drag'); markUse(); }
+  });
+  function uTouch() { uUser = Date.now(); }
+  uv.addEventListener('mouseenter', () => hover = true);
+  uv.addEventListener('mouseleave', () => hover = false);
+  /* arrastar com o dedo / mouse */
+  let sx = 0, sy = 0, dx = 0, dragging = false, moved = false;
+  ut.addEventListener('pointerdown', e => { dragging = true; moved = false; sx = e.clientX; sy = e.clientY; dx = 0; uTouch(); });
+  addEventListener('pointermove', e => {
+    if (!dragging) return; dx = e.clientX - sx;
+    if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - sy)) moved = true;
+    if (moved) { ut.classList.add('drag'); ut.style.transform = `translate3d(${-(step() * ui) + dx}px,0,0)`; }
+  });
+  addEventListener('pointerup', () => {
+    if (!dragging) return; dragging = false; uTouch();
+    if (moved) { const s = step(); goUse(dx < -s * .18 ? ui + 1 : dx > s * .18 ? ui - 1 : ui); }
+  });
+  addEventListener('pointercancel', () => { if (dragging) { dragging = false; goUse(ui); } });
+  ut.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  /* links dos clones */
+  all.slice(n).forEach((k, j) => k.querySelector('a').addEventListener('click', e => { e.preventDefault(); orig[j].querySelector('a').click(); }));
+  addEventListener('resize', () => goUse(ui % n, false));
+  markUse();
+
+  /* relógio único das animações automáticas */
+  setInterval(() => {
+    if (document.hidden) return;
+    cycle();
+  }, 2600);
+  setInterval(() => {
+    if (document.hidden || reduce || !uInView || dragging || Date.now() - uUser < 5000) return;
+    goUse(ui + 1);
+  }, 3400);
+
+  /* Entradas suaves + barra fixa */
+  if ('IntersectionObserver' in window) {
+    const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }), { threshold: .12 });
+    $$('.rv').forEach(el => ro.observe(el));
+    const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { count(e.target); so.unobserve(e.target); } }), { threshold: .6 });
+    $$('[data-count]').forEach(el => so.observe(el));
+    new IntersectionObserver(es => es.forEach(e => inView = e.isIntersecting), { threshold: .45 }).observe(plans);
+    new IntersectionObserver(es => es.forEach(e => uInView = e.isIntersecting), { threshold: .45 }).observe(uv);
+    const bar = $('#bar'), seen = new Set();
+    const bo = new IntersectionObserver(es => {
+      es.forEach(e => e.isIntersecting ? seen.add(e.target) : seen.delete(e.target));
+      const s = seen.size === 0; bar.classList.toggle('show', s); bar.querySelector('a').tabIndex = s ? 0 : -1;
+    });
+    ['cta-hero', 'cta-final', 'plans'].forEach(id => bo.observe(document.getElementById(id)));
+  } else $$('.rv').forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
